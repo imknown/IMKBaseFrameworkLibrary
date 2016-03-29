@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 全透明 00, 完全不透明 FF -->
+    <!-- FFFFFF -->
+    <color name="white">@android:color/white</color>
+    <color name="white_00">#00FFFFFF</color>
+    <color name="white_10">#19FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="white_30">#4CFFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+    <color name="white_50">#7FFFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_70">#B2FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="white_90">#E5FFFFFF</color>
+    <color name="white_100">#FFFFFFFF</color>
+
+    <!-- 000000 -->
+    <color name="black">@android:color/black</color>
+    <color name="black_00">#00000000</color>
+    <color name="black_10">#19000000</color>
+    <color name="black_20">#33000000</color>
+    <color name="black_30">#4C000000</color>
+    <color name="black_40">#66000000</color>
+    <color name="black_50">#7F000000</color>
+    <color name="black_60">#99000000</color>
+    <color name="black_70">#B2000000</color>
+    <color name="black_80">#CC000000</color>
+    <color name="black_90">#E5000000</color>
+    <color name="black_100">#FF000000</color>
+
+    <!-- 透明 -->
+    <color name="transparent">@android:color/transparent</color>
+
+    <!-- whole_app_color -->
+    <color name="whole_app_color">#4C7269</color>
+    <color name="whole_app_color_darker">#034940</color>
+
+</resources>

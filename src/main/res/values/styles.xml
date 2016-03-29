@@ -1,0 +1,41 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme, dependent on API level. -->
+    <!-- This theme is replaced by AppBaseTheme from res/values-vXX/styles.xml on newer devices. -->
+    <style name="MyAppBaseTheme" parent="android:Theme.Light.NoTitleBar">
+        <!-- Theme customizations available in newer API levels can go in res/values-vXX/styles.xml, -->
+        <!-- while customizations related to backward-compatibility can go here. -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="MyAppTheme" parent="MyAppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="AppFullScreenBaseTheme" parent="android:Theme.Light.NoTitleBar.Fullscreen" />
+
+    <!-- 全屏 -->
+    <style name="AppFullScreenTheme" parent="AppFullScreenBaseTheme" />
+    
+    <style name="AppFullScreenBaseThemeWithStatusBarAbove" parent="MyAppBaseTheme" />
+
+    <!-- Demo -->
+    <style name="demo_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <!-- 全屏半透明黑色 -->
+    <style name="hover_black" parent="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:colorForeground">#FFF</item>
+        <item name="android:windowBackground">@color/black_60</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowFullscreen">true</item> 
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

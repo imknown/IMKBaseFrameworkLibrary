@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="demo_string_array">
+        <item>String 1</item>
+        <item>int 2</item>
+        <item>return 3</item>
+        <item>~4</item>
+        <item>""5</item>
+        <item>!!!6</item>
+        <item>;7</item>
+    </string-array>
+
+</resources>

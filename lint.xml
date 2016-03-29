@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!-- 忽略字体使用dp作为单位 -->
+    <issue id="SpUsage" severity="ignore">
+        <ignore regexp="res/layout/.*" />
+    </issue>
+
+    <!-- 忽略 TextView + ImageView 通过 android:drawableXxx="" 组合 -->
+    <issue id="UseCompoundDrawables">
+        <ignore regexp="res/layout/.*" />
+    </issue>
+
+    <!-- 忽略 不写 android:contentDescription -->
+     <issue id="ContentDescription">
+        <ignore regexp="res/layout/.*" />
+    </issue>
+</lint>

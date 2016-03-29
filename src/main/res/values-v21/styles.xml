@@ -1,0 +1,52 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme for API 21+. This theme completely replaces -->
+    <!-- AppBaseTheme from res/values/styles.xml on API 21+ devices. -->
+    <!-- <style name="AppBaseTheme" parent="@android:style/Widget.TextSelectHandle"> -->
+    <!-- <style name="AppBaseTheme" parent="android:Theme.Material.NoActionBar.Fullscreen"> -->
+    <style name="MyAppBaseTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+
+        <!-- your app branding color for the app bar -->
+        <item name="android:colorPrimary">@color/whole_app_color</item>
+
+        <!-- darker variant for the status bar and contextual app bars -->
+        <item name="android:colorPrimaryDark">@color/whole_app_color_darker</item>
+
+        <!-- theme UI controls like checkboxes and text fields -->
+        <item name="android:colorAccent">@color/whole_app_color_darker</item>
+
+        <!-- 导航栏按钮背景颜色 -->
+        <item name="android:navigationBarColor">@color/whole_app_color</item>
+        <item name="android:windowBackground">@color/whole_app_color</item>
+
+        <!-- ListView 等拖动的时候的背景 -->
+        <item name="android:colorBackgroundCacheHint">@color/whole_app_color</item>
+    </style>
+
+    <style name="MyAppFullScreenBaseTheme" parent="android:Theme.Material.Light.NoActionBar.Fullscreen" />
+
+    <style name="MyAppFullScreenBaseThemeWithStatusBarAbove" parent="MyAppBaseTheme">
+
+        <!-- 是否要填充顶部的状态栏区域 -->
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!-- 是否要填充底部的导航区域 -->
+        <item name="android:windowTranslucentNavigation">true</item>
+
+        <!-- 是否统将在你的window里面绘制status bar -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <!-- 状态栏颜色 -->
+        <!-- <item name="android:statusBarColor">@color/whole_app_color_darker</item> -->
+
+
+        <!-- 与 android:windowTranslucentStatus 冲突, -->
+        <!-- 但是 可以保证 ** 状态栏完全看不到(只显示图标) ** 模式下, -->
+        <!-- 输入法 android:windowSoftInputMode="adjustResize" 没有高度问题 -->
+        <!-- ** 状态栏完全看不到(只显示图标) ** 相关代码 请看 BaseActivity.java -->
+        <!-- 两者的 注释 同时解开, 即可使用 ** 状态栏完全看不到(只显示图标) ** -->
+        <!-- 建议本属性 写在 layout xml 的 ToolBar 中 -->
+        <!-- <item name="android:fitsSystemWindows">true</item> -->
+    </style>
+
+</resources>
