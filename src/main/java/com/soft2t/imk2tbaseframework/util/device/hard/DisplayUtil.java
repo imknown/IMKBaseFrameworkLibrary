@@ -14,7 +14,7 @@ import android.view.WindowManager;
  * densityDpi 表示, 每英寸多少个像素点,<br/>
  * density = densityDpi / 160 (谷歌定义的标准为160),<br/>
  * density = resolution (分辨率) / Screen size (屏幕尺寸)
- * 
+ *
  * @author imknown
  */
 public class DisplayUtil {
@@ -23,12 +23,6 @@ public class DisplayUtil {
 
 	private Context context;
 
-	/**
-	 * 构造函数
-	 * 
-	 * @param context
-	 *            上下文
-	 */
 	public DisplayUtil(Context context) {
 		this.context = context;
 		this.dm = context.getResources().getDisplayMetrics();
@@ -37,11 +31,9 @@ public class DisplayUtil {
 	// 换算 =========================
 
 	/**
-	 * 
-	 * @param dipValue
+	 *
 	 * @param fixFloat
 	 *            是否微偏移, 建议不要偏移, 会有误差
-	 * @return
 	 */
 	@Deprecated
 	public float dip2px_M1(float dipValue, boolean fixFloat) {
@@ -53,11 +45,9 @@ public class DisplayUtil {
 	}
 
 	/**
-	 * 
-	 * @param pxValue
+	 *
 	 * @param fixFloat
 	 *            是否微偏移, 建议不要偏移, 会有误差
-	 * @return
 	 */
 	@Deprecated
 	public float px2dip_M1(float pxValue, boolean fixFloat) {
@@ -100,9 +90,6 @@ public class DisplayUtil {
 
 	/**
 	 * 获得屏幕宽度
-	 * 
-	 * @param context
-	 * @return
 	 */
 	@Deprecated
 	public int getScreenWidth_M1() {
@@ -114,9 +101,6 @@ public class DisplayUtil {
 
 	/**
 	 * 获得屏幕高度
-	 * 
-	 * @param context
-	 * @return
 	 */
 	@Deprecated
 	public int getScreenHeight_M1() {
@@ -128,9 +112,6 @@ public class DisplayUtil {
 
 	/**
 	 * 获得屏幕宽度
-	 * 
-	 * @param context
-	 * @return
 	 */
 	public int getScreenWidth_M2() {
 		return dm.widthPixels;
@@ -138,9 +119,6 @@ public class DisplayUtil {
 
 	/**
 	 * 获得屏幕高度
-	 * 
-	 * @param context
-	 * @return
 	 */
 	public int getScreenHeight_M2() {
 		return dm.heightPixels;
@@ -149,26 +127,18 @@ public class DisplayUtil {
 	// 状态栏 =========================
 
 	/**
-	 * 获取 状态栏高度
-	 * 
-	 * @param a
-	 *            当前Activity对象
-	 * @return 状态栏高度(px)
+	 * 获取 状态栏高度(px)
 	 */
 	public static int getStatusBarHeight(Activity a) {
 		Rect frame = new Rect();
 		a.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
-		int statusBarHeight = frame.top;// 状态栏高度
-
-		return statusBarHeight;
+		return frame.top;
 	}
 
 	/**
-	 * 获得 状态栏高度
-	 * 
-	 * @param context
-	 * @return 状态栏高度(px)
+	 * 获得 状态栏高度(px)
 	 */
+    @Deprecated
 	public static int getStatusBarHeight_M2(Context context) {
 		int statusHeight = -1;
 
@@ -186,12 +156,26 @@ public class DisplayUtil {
 		return statusHeight;
 	}
 
+//    /**
+//     * 获取 导航栏高度
+//     */
+//    public static int getNavigationBarHeight(Context context) {
+//        Resources resources = context.getResources();
+//        int orientation = resources.getConfiguration().orientation;
+//
+//        String name = orientation == Configuration.ORIENTATION_PORTRAIT ? "navigation_bar_height" : "navigation_bar_height_landscape";
+//
+//        int id = resources.getIdentifier(name, "dimen", "android");
+//
+//        if (id > 0) {
+//            return resources.getDimensionPixelSize(id);
+//        }
+//
+//        return 0;
+//    }
+
 	/**
-	 * 获取 标题栏高度
-	 * 
-	 * @param a
-	 *            当前Activity对象
-	 * @return 标题栏高度(px)
+	 * 获取 标题栏高度(px)
 	 */
 	public static int getTitleBarHeight(Activity a) {
 		View v = a.getWindow().findViewById(Window.ID_ANDROID_CONTENT);
@@ -205,45 +189,26 @@ public class DisplayUtil {
 		return titleBarHeight;
 	}
 
-	/**
-	 * 获取当前屏幕截图，包含状态栏
-	 * 
-	 * @param activity
-	 * @return
-	 */
-	public Bitmap snapShotWithStatusBar(Activity activity) {
-		View view = activity.getWindow().getDecorView();
-		view.setDrawingCacheEnabled(true);
-		view.buildDrawingCache();
-		Bitmap bmp = view.getDrawingCache();
-		int width = getScreenWidth_M2();
-		int height = getScreenHeight_M2();
-		Bitmap bp = null;
-		bp = Bitmap.createBitmap(bmp, 0, 0, width, height);
-		view.destroyDrawingCache();
-		return bp;
-	}
+    /**
+     * 获取当前屏幕截图
+     */
+    public Bitmap snapShotWithStatusBar(Activity activity, boolean containsStatusBar) {
+        View view = activity.getWindow().getDecorView();
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
 
-	/**
-	 * 获取当前屏幕截图，不包含状态栏
-	 * 
-	 * @param activity
-	 * @return
-	 */
-	public Bitmap snapShotWithoutStatusBar(Activity activity) {
-		View view = activity.getWindow().getDecorView();
-		view.setDrawingCacheEnabled(true);
-		view.buildDrawingCache();
-		Bitmap bmp = view.getDrawingCache();
-		Rect frame = new Rect();
-		activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
-		int statusBarHeight = frame.top;
+        Bitmap bmp = view.getDrawingCache();
 
-		int width = getScreenWidth_M2();
-		int height = getScreenHeight_M2();
-		Bitmap bp = null;
-		bp = Bitmap.createBitmap(bmp, 0, statusBarHeight, width, height - statusBarHeight);
-		view.destroyDrawingCache();
-		return bp;
-	}
+        int x = 0;
+        int y = containsStatusBar ? getStatusBarHeight(activity) : 0;
+
+        int width = getScreenWidth_M2();
+        int height = getScreenHeight_M2();
+
+        Bitmap bp = Bitmap.createBitmap(bmp, x, y, width, height - y);
+
+        view.destroyDrawingCache();
+
+        return bp;
+    }
 }

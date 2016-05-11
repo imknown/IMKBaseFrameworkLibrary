@@ -2,7 +2,7 @@
 <resources>
 
     <!-- 通用 -->
-    <string name="my_app_name">养老管家小桌面</string>
+    <string name="my_app_name">IMKBaseDamo</string>
     <string name="action_settings">设置</string>
     <string name="tips_waiting">正在获取数据…</string>
     <string name="unknown_exception">很抱歉, 程序出现了问题.\n日志正在保存,\n请联系我们以获取帮助.</string>
