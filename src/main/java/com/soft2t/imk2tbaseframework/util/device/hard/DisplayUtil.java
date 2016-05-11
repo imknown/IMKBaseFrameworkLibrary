@@ -1,9 +1,11 @@
 package com.soft2t.imk2tbaseframework.util.device.hard;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
+import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
@@ -156,23 +158,46 @@ public class DisplayUtil {
 		return statusHeight;
 	}
 
-//    /**
-//     * 获取 导航栏高度
-//     */
-//    public static int getNavigationBarHeight(Context context) {
-//        Resources resources = context.getResources();
-//        int orientation = resources.getConfiguration().orientation;
-//
-//        String name = orientation == Configuration.ORIENTATION_PORTRAIT ? "navigation_bar_height" : "navigation_bar_height_landscape";
-//
-//        int id = resources.getIdentifier(name, "dimen", "android");
-//
-//        if (id > 0) {
-//            return resources.getDimensionPixelSize(id);
-//        }
-//
-//        return 0;
-//    }
+    /**
+     * 获取 软键盘(输入法) 高度
+     */
+    private int getSoftInputHeight(Activity a) {
+        Rect r = new Rect();
+        a.getWindow().getDecorView().getWindowVisibleDisplayFrame(r);
+        int screenHeight = a.getWindow().getDecorView().getRootView().getHeight();
+        int softInputHeight = screenHeight - r.bottom;
+
+        // When SDK Level >= 18, the softInputHeight will contain the height of softButtonsBar (if has)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            softInputHeight = softInputHeight - getSoftNavigatorBarHeight(a);
+        }
+
+        if(softInputHeight < 0){
+            softInputHeight = 0;
+        }
+
+        return softInputHeight;
+    }
+
+    /**
+     * 获取 导航栏 高度
+     */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    private int getSoftNavigatorBarHeight(Activity a) {
+        DisplayMetrics metrics = new DisplayMetrics();
+
+        a.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int usableHeight = metrics.heightPixels;
+
+        a.getWindowManager().getDefaultDisplay().getRealMetrics(metrics);
+        int realHeight = metrics.heightPixels;
+
+        if (realHeight > usableHeight) {
+            return realHeight - usableHeight;
+        } else {
+            return 0;
+        }
+    }
 
 	/**
 	 * 获取 标题栏高度(px)
