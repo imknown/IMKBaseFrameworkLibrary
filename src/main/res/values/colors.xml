@@ -1,37 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- 全透明 00, 完全不透明 FF -->
-    <!-- FFFFFF -->
-    <color name="white">@android:color/white</color>
-    <color name="white_00">#00FFFFFF</color>
-    <color name="white_10">#19FFFFFF</color>
-    <color name="white_20">#33FFFFFF</color>
-    <color name="white_30">#4CFFFFFF</color>
-    <color name="white_40">#66FFFFFF</color>
-    <color name="white_50">#7FFFFFFF</color>
-    <color name="white_60">#99FFFFFF</color>
-    <color name="white_70">#B2FFFFFF</color>
-    <color name="white_80">#CCFFFFFF</color>
-    <color name="white_90">#E5FFFFFF</color>
-    <color name="white_100">#FFFFFFFF</color>
+    <!-- 黑白 与 透明 start -->
+    <!-- alpha channel = Opaque, 全透明 00, 完全不透明 FF -->
+    <!-- more info: https://goo.gl/QuFq3Q -->
+    <color name="colorWhite">@android:color/white</color>
+    <color name="colorWhiteOpaque00">#00FFFFFF</color>
+    <color name="colorWhiteOpaque10">#19FFFFFF</color>
+    <color name="colorWhiteOpaque20">#33FFFFFF</color>
+    <color name="colorWhiteOpaque30">#4CFFFFFF</color>
+    <color name="colorWhiteOpaque40">#66FFFFFF</color>
+    <color name="colorWhiteOpaque50">#7FFFFFFF</color>
+    <color name="colorWhiteOpaque60">#99FFFFFF</color>
+    <color name="colorWhiteOpaque70">#B2FFFFFF</color>
+    <color name="colorWhiteOpaque80">#CCFFFFFF</color>
+    <color name="colorWhiteOpaque90">#E5FFFFFF</color>
+    <color name="colorWhiteOpaque100">#FFFFFFFF</color>
+    <color name="colorWhiteTransparent00">@color/colorWhiteOpaque100</color>
+    <color name="colorWhiteTransparent10">@color/colorWhiteOpaque90</color>
+    <color name="colorWhiteTransparent20">@color/colorWhiteOpaque80</color>
+    <color name="colorWhiteTransparent30">@color/colorWhiteOpaque70</color>
+    <color name="colorWhiteTransparent40">@color/colorWhiteOpaque60</color>
+    <color name="colorWhiteTransparent50">@color/colorWhiteOpaque50</color>
+    <color name="colorWhiteTransparent60">@color/colorWhiteOpaque40</color>
+    <color name="colorWhiteTransparent70">@color/colorWhiteOpaque30</color>
+    <color name="colorWhiteTransparent80">@color/colorWhiteOpaque20</color>
+    <color name="colorWhiteTransparent90">@color/colorWhiteOpaque10</color>
+    <color name="colorWhiteTransparent100">@color/colorWhiteOpaque00</color>
 
-    <!-- 000000 -->
-    <color name="black">@android:color/black</color>
-    <color name="black_00">#00000000</color>
-    <color name="black_10">#19000000</color>
-    <color name="black_20">#33000000</color>
-    <color name="black_30">#4C000000</color>
-    <color name="black_40">#66000000</color>
-    <color name="black_50">#7F000000</color>
-    <color name="black_60">#99000000</color>
-    <color name="black_70">#B2000000</color>
-    <color name="black_80">#CC000000</color>
-    <color name="black_90">#E5000000</color>
-    <color name="black_100">#FF000000</color>
+    <color name="colorBlack">@android:color/black</color>
+    <color name="colorBlackOpaque00">#00000000</color>
+    <color name="colorBlackOpaque10">#19000000</color>
+    <color name="colorBlackOpaque20">#33000000</color>
+    <color name="colorBlackOpaque30">#4C000000</color>
+    <color name="colorBlackOpaque40">#66000000</color>
+    <color name="colorBlackOpaque50">#7F000000</color>
+    <color name="colorBlackOpaque60">#99000000</color>
+    <color name="colorBlackOpaque70">#B2000000</color>
+    <color name="colorBlackOpaque80">#CC000000</color>
+    <color name="colorBlackOpaque90">#E5000000</color>
+    <color name="colorBlackOpaque100">#FF000000</color>
+    <color name="colorBlackTransparent00">@color/colorBlackOpaque100</color>
+    <color name="colorBlackTransparent10">@color/colorBlackOpaque90</color>
+    <color name="colorBlackTransparent20">@color/colorBlackOpaque80</color>
+    <color name="colorBlackTransparent30">@color/colorBlackOpaque70</color>
+    <color name="colorBlackTransparent40">@color/colorBlackOpaque60</color>
+    <color name="colorBlackTransparent50">@color/colorBlackOpaque50</color>
+    <color name="colorBlackTransparent60">@color/colorBlackOpaque40</color>
+    <color name="colorBlackTransparent70">@color/colorBlackOpaque30</color>
+    <color name="colorBlackTransparent80">@color/colorBlackOpaque20</color>
+    <color name="colorBlackTransparent90">@color/colorBlackOpaque10</color>
+    <color name="colorBlackTransparent100">@color/colorBlackOpaque00</color>
 
     <!-- 透明 -->
-    <color name="transparent">@android:color/transparent</color>
+    <color name="colorTransparent">@android:color/transparent</color>
+    <!-- 黑白 与 透明 end -->
 
     <!-- whole_app_color -->
     <color name="whole_app_color">#4C7269</color>
