@@ -32,10 +32,6 @@ public class ShellUtils {
 	public static final String COMMAND_EXIT = "exit\n";
 	public static final String COMMAND_LINE_END = "\n";
 
-	public static final String URBETTER = "AOSP on urbetter";
-
-	public static final String COMMAND_SU_FOR_URBETTER = "utsu 0";
-
 	public static String COMMAND_SU_PREFIX = COMMAND_SU;
 
 	private ShellUtils() {
